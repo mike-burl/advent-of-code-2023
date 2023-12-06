@@ -1,6 +1,5 @@
 import re
 
-print('Opening input file...')
 with open('input.txt') as file:
     lines = file.readlines()
 
@@ -29,16 +28,21 @@ for line in lines:
 			(
 			  \d|
 			  (?:
-			      one|two|three|four|five|six|seven|eight|nine|ten| 
-			      eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen| 
-			      eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty| 
-			      ninety|hundred|thousand
+			      one|two|three|four|five|six|seven|eight|nine
 			  )
-              \b
 )"""
     numbers = re.findall(pattern, line)
     firstNum = stringToInt(numbers[0])
-    lastNum = stringToInt(numbers[-1])
+    reversedLine = line[::-1]
+    reversePattern = r"""(?x)
+			(
+			  \d|
+			  (?:
+			      eno|owt|eerht|ruof|evif|xis|neves|thgie|enin
+			  )
+)"""
+    numbers = re.findall(reversePattern, reversedLine)
+    lastNum = stringToInt(numbers[0][::-1])
     totalSum += (firstNum * 10) + lastNum
 
 print(totalSum)
