@@ -1,7 +1,7 @@
 import re
 
 print('Opening input file...')
-with open('test.txt') as file:
+with open('input.txt') as file:
     lines = file.readlines()
 
 totalSum = 0
