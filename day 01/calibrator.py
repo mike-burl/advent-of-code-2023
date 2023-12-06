@@ -1,7 +1,7 @@
 import re
 
 print('Opening input file...')
-with open('test.txt') as file:
+with open('input.txt') as file:
     lines = file.readlines()
 
 numberMap = {
@@ -34,6 +34,7 @@ for line in lines:
 			      eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty| 
 			      ninety|hundred|thousand
 			  )
+              \b
 )"""
     numbers = re.findall(pattern, line)
     firstNum = stringToInt(numbers[0])
